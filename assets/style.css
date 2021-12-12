@@ -4,9 +4,10 @@
   }
   
   :root {
-    --hue-neutral: bisque;
-    --hue-correct: green;
-    --hue-wrong: red;
+    --hue-neutral: 200;
+    --hue-correct: 500;
+    --hue-wrong: 700;
+    --hue-Btn: 775;
   }
 
   body {
@@ -43,4 +44,16 @@
       gap: 10px;
       margin: 20px 0;
       grid-template-columns: repeat(2, auto);
+      /* --hue: var(--hue-neutral);
+      background-color: hsl(var(--hue), 100%, 50%); */
+  }
+
+  .questions {
+      --hue: var(--hue-neutral);
+      background-color: hsl(var(--hue), 100%, 50%);
+  }
+
+  button {
+      --hue: var(--hue-Btn);
+      background-color: hsl(var(--hue), 100%, 20%);
   }
