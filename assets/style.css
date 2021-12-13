@@ -43,7 +43,7 @@
     display:none;
 } */
 
-  .answerBtn{
+  /* .answerBtn{
       display:grid;
       justify-content:center;
       align-items:center;
@@ -55,21 +55,24 @@
       border:1px solid hsl(var(--hue), 100%, 30%);
       border-radius:5px;
       padding:5px 10px;
-      outline:none;
+      outline:none; */
       /* --hue: var(--hue-neutral);
       background-color: hsl(var(--hue), 100%, 50%); */
-  }
+  /* } */
 
   .questions{
       --hue:var(--hue-neutral);
       background-color:hsl(var(--hue), 100%, 50%);
-  }
-
-  .timer{
-      display:flex;
+      /* display:flex; */
       justify-content:center;
       align-items:center;
   }
+
+  /* .timer{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+  } */
 
   .startBtn{
     font-size:25px;

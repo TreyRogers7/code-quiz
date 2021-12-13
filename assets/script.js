@@ -5,7 +5,10 @@ var startbtnEl=document.querySelector(".startBtn")
 var timerEl=document.querySelector(".timer")
 var h1El=document.querySelector(".h1")
 var containerEl=document.querySelector("#container")
+var highscoresEl=document.querySelector(".highscores")
 console.log(answerBtnEl)
+
+var shuffleQuestions, currentQuestionIndex
 
 startbtnEl.addEventListener('click', beginGame)
 
@@ -13,9 +16,12 @@ function beginGame() {
     console.log('started')
     startbtnEl.classList.add('hide')
     h1El.classList.add('hide')
+    shuffleQuestions=questionsArray.sort(() => Math.random() -.5)
+    currentQuestionIndex=0
     // answersEl.classList.remove('hide')
     // questionsEl.classList.remove('hide')
-    containerEl.classList.remove('hide')
+    provideNextQuestion()
+    console.log(beginGame)
 }
 
 function countDown() {
@@ -35,12 +41,16 @@ function countDown() {
           displayMessage();
         }
       }, 1000);
+      console.log(countDown)
       }
 
 var questionsArray = [{
     question: "what you eat?",
-    answers: ["meat", "veggies", "fruits", "dessert"],
-    solution: "meat"
+    answers: [
+        {text:"meat", correct:true},
+        {text:"veggies", correct:false},
+        {text:"fruits", correct:false},
+        {text:"dessert", correct:false}],
 },{
     question: "where do you work",
     answers: ["golf course", "sotware engineer", "server", "water boy"],
@@ -62,14 +72,30 @@ var questionsArray = [{
     answers: ["golf course", "sotware engineer", "server", "water boy"],
     solution: "golf course"
 }];
+console.log(questionsArray)
+
 var qCounter = 0
 
-function displayQuestion() {
-    var questionObj=questionsArray[qCounter];
-    questionsEl.textContent=questionObj.question;
-    for (var i=0; i<answerBtnEl.length; i++) {
-        answerBtnEl[i].textContent=questionObj.answers[i]
-    }
+function provideNextQuestion() {
+    displayQuestion(shuffleQuestions[currentQuestionIndex])
 }
 
-displayQuestion();
+function displayQuestion(questionsArray) {
+    questionsEl.innerText=questionsArray.questionsArray
+}
+
+// {
+//     var questionObj=questionsArray[qCounter];
+//     questionsEl.textContent=questionObj.question;
+//     for (var i=0; i<answerBtnEl.length; i++) {
+//         answerBtnEl[i].textContent=questionObj.answers[i]
+//     }
+// }
+console.log(provideNextQuestion)
+
+provideNextQuestion();
+
+function endGame() {
+    highscoresEl.classList.remove('hide')
+    console.log(endGame)
+}
