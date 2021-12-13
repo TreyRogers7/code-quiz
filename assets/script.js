@@ -82,7 +82,7 @@ function provideNextQuestion() {
 
 function displayQuestion(questionsArray) {
     questionsEl.innerText=questionsArray.questionsArray
-}
+// } jashdfkj
 
 // {
 //     var questionObj=questionsArray[qCounter];
