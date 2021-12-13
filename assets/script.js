@@ -2,13 +2,13 @@ var questionsEl=document.querySelector(".questions")
 var answersEl=document.querySelector(".answers")
 var answerBtnEl=document.querySelectorAll(".answerBtn")
 var startbtnEl=document.querySelector(".startBtn")
-var timerEl=document.querySelector(".timer")
+var timerEl=document.querySelector(".time")
 var h1El=document.querySelector(".h1")
 var containerEl=document.querySelector("#container")
 var highscoresEl=document.querySelector(".highscores")
 console.log(answerBtnEl)
 
-var shuffleQuestions, currentQuestionIndex
+// var shuffleQuestions, currentQuestionIndex
 
 startbtnEl.addEventListener('click', beginGame)
 
@@ -16,33 +16,45 @@ function beginGame() {
     console.log('started')
     startbtnEl.classList.add('hide')
     h1El.classList.add('hide')
-    shuffleQuestions=questionsArray.sort(() => Math.random() -.5)
-    currentQuestionIndex=0
-    // answersEl.classList.remove('hide')
-    // questionsEl.classList.remove('hide')
-    provideNextQuestion()
+    answersEl.classList.remove('hide')
+    questionsEl.classList.remove('hide')
+    // displayQuestion()
+    // provideNextQuestion()
     console.log(beginGame)
 }
 
-function countDown() {
-    var timeLeft=60;
+var secondsLeft=60;
 
-    var timerInterval = setInterval(function () {
-        if (timeLeft > 1) {
-        timerEl.textContent = timeLeft + " seconds left.";
-        timeLeft--;
-        }
-        else if (timeLeft === 1) {
-          timerEl.textContent = timeLeft + " second left.";
-          timeLeft--;
-        } else {
-          timerEl.textContent = '';
+function setTime() {
+
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timerEl.textContent = secondsLeft + " game over in ";
+    
+        if(secondsLeft === 0) {
+          // Stops execution of action at set interval
           clearInterval(timerInterval);
-          displayMessage();
+          // Calls function to create and append image
+          endGame();
         }
       }, 1000);
-      console.log(countDown)
-      }
+    }
+
+// function displayMessage() {
+//     var timecount=0;
+
+//     var messageinterval=setInterval(function() {
+//         if (timer[timecount] === undefined) {
+//             clearInterval(msgInterval);
+//           } else {
+//             timerEl.textContent = time[timecount];
+//             wordCount++;
+//           }
+//         }, 1000);
+//     }
+
+
+// }    
 
 var questionsArray = [{
     question: "what you eat?",
@@ -76,24 +88,24 @@ console.log(questionsArray)
 
 var qCounter = 0
 
-function provideNextQuestion() {
-    displayQuestion(shuffleQuestions[currentQuestionIndex])
-}
-
-function displayQuestion(questionsArray) {
-    questionsEl.innerText=questionsArray.questionsArray
-}
-
-// {
-//     var questionObj=questionsArray[qCounter];
-//     questionsEl.textContent=questionObj.question;
-//     for (var i=0; i<answerBtnEl.length; i++) {
-//         answerBtnEl[i].textContent=questionObj.answers[i]
-//     }
+// function provideNextQuestion() {
+//     displayQuestion(shuffleQuestions[currentQuestionIndex])
 // }
-console.log(provideNextQuestion)
 
-provideNextQuestion();
+// function displayQuestion(questionsArray) {
+    // questionsEl.innerText=questionsArray.questionsArray
+// }
+
+{
+    var questionObj=questionsArray[qCounter];
+    questionsEl.textContent=questionObj.question;
+    for (var i=0; i<answerBtnEl.length; i++) {
+        answerBtnEl[i].textContent=questionObj.answers[i]
+    }
+}
+// console.log(provideNextQuestion)
+
+// provideNextQuestion();
 
 function endGame() {
     highscoresEl.classList.remove('hide')
