@@ -88,9 +88,19 @@ console.log(questionsArray)
 
 var qCounter = 0
 
+<<<<<<< HEAD
 // function provideNextQuestion() {
 //     displayQuestion(shuffleQuestions[currentQuestionIndex])
 // }
+=======
+function provideNextQuestion() {
+    displayQuestion(shuffleQuestions[currentQuestionIndex])
+}
+
+function displayQuestion(questionsArray) {
+    questionsEl.innerText=questionsArray.questionsArray
+// } jashdfkj
+>>>>>>> temp
 
 // function displayQuestion(questionsArray) {
     // questionsEl.innerText=questionsArray.questionsArray
