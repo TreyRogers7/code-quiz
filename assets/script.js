@@ -19,7 +19,7 @@ function beginGame() {
 }
 
 function countDown() {
-    var timeLeft=60;
+    var timeLeft=59;
 
     var timerInterval = setInterval(function () {
         if (timeLeft > 1) {
