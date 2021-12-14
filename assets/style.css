@@ -97,9 +97,9 @@
   }
 
   .answerBtn.correct{
-      --hue:var(--hue-correct);
+      background-color:green;
   }
 
   .answerBtn.wrong{
-    --hue:var(--hue-wrong);
+    background-color:red;
   }
