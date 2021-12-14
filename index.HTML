@@ -11,33 +11,25 @@
 
 <header>
     <h1 style="text-align:center" class="h1">Can You Code Better Than A Fifth Grader?</h1>
-    <div class="controls">
-        <!-- Start Quiz button -->
-        <button id="start-btn" class="startBtn">Start</button>
     </div>
 </header>
-<body>
-    <div class="rules-box">
-        <div class="rules-info">
-            <span>GroundRules</span>
-        </div>
-    </div>
-    <!-- <h1 style="text-align:center">Can You Code Better Than A Fifth Grader?</h1> -->
-    <!-- <div class="timer" style="text-align:center"></div> -->
-    <!-- <main> -->
-    <div id="container" class="hide">
-        <div class="timer" style="text-align:center;"></div>
-        <div class="questions"></div>
-        <div class="answers">
-            <button class="answerBtn"></button>
-            <button class="answerBtn"></button>
-            <button class="answerBtn"></button>
-            <button class="answerBtn"></button>
-        </div>
-        <div class="highscores"></div>
-    </div>
-    <!-- </main> -->
 
+<body>
+    <div class="container">
+        <div class="controls">
+            <button id="start-btn" class="startBtn">Start</button>
+        </div>
+        <div id="question-container" class="hide">
+            <div class="questions"></div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="answerBtn">answer 1</button>
+                <button class="answerBtn">answer 2</button>
+                <button class="answerBtn">answer 3</button>
+                <button class="answerBtn">answer 4</button>
+            </div>
+            <div class="highscores"></div>
+        </div>
+    </div>
     <script src="assets/script.js"></script>
 </body>
 
