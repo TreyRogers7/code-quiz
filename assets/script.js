@@ -6,6 +6,7 @@ var timerEl = document.querySelector(".timer")
 var h1El = document.querySelector(".h1")
 var containerEl = document.querySelector("#container")
 var timerInterval
+var timeLeft = 60
 console.log(answerBtnEl)
 
 // startbtnEl.addEventListener('click', beginGame)
@@ -27,7 +28,6 @@ function endGame() {
 }
 
 function countDown() {
-    var timeLeft = 60;
 
     timerInterval = setInterval(function () {
         if (timeLeft > 1) {
@@ -92,6 +92,7 @@ function solution(event) {
         } else {
             event.target.classList.add("wrong");
             setTimeout(function (){
+                timeLeft=timeLeft-10
                 event.target.classList.remove("wrong")
             },1000)
     
