@@ -7,6 +7,7 @@
     --hue-neutral:200;
     --hue-correct:500;
     --hue-wrong:700;
+    --hue-Btn:775;
   }
 
   body{
@@ -18,10 +19,18 @@
     align-items:center;
     height:100vh;
     width:100vw;
-    background-color: hsl(var(--hue), 100%, 30%);
+    background-color: hsl(var(--hue), 100%, 20%);
   }
 
-  .container{
+  /* body.correct{
+      --hue:var(--hue-correct);
+  }
+
+  body.wrong{
+      --hue:var(--hue-wrong);
+  } */
+
+  #container{
       width:600px;
       max-width:80%;
       background-color:white;
@@ -30,52 +39,67 @@
       box-shadow:0 0 15px 2px;
   }
 
-   .btn-grid{
+.hide{
+    display:none;
+} */
+
+  .answerBtn{
       display:grid;
+      justify-content:center;
+      align-items:center;
       gap:20px;
       margin:20px;
       grid-template-columns:repeat(2, auto);
-    }
+      --hue:var(--hue-Btn);
+      background-color:hsl(var(--hue), 100%, 50%);
+      border:1px solid hsl(var(--hue), 100%, 30%);
+      border-radius:5px;
+      padding:5px 10px;
+      outline:none;
+      /* --hue: var(--hue-neutral);
+      background-color: hsl(var(--hue), 100%, 50%); */
+  }
 
-    .answerBtn{
-        --hue:var(--hue-neutral);
-        border:1px solid hsl(var(--hue), 100%, 30%);
-        background-color: hsl(var(--hue), 100%, 50%);
-        border-radius:5px;
-        padding:5px 10px;
-        color:white;
-        outline:none;
-    }
+  .questions{
+      --hue:var(--hue-neutral);
+      background-color:hsl(var(--hue), 100%, 50%);
+  }
 
-    .answerBtn:hover{
-        border-color:black;
-    }
+  .timer{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+  }
 
-    .answerBtn.correct{
-        --hue:var(--hue-correct)
-    }
+  .startBtn{
+    font-size:25px;
+    font-weight:bold;
+    padding:10px 20px;
+}
 
-    .answerBtn.wrong{
-        --hue:var(--hue-correct)
-    }
+  .controls {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
 
-    .startBtn{
-        font-size: 1.5rem;
-        font-weight: bold;
-        padding: 10px 20px;
-        color: green;
-    }
+  /* .answerBtn{
+      --hue:var(--hue-Btn);
+      background-color:hsl(var(--hue), 100%, 50%);
+      border:1px solid hsl(var(--hue), 100%, 30%);
+      border-radius:5px;
+      padding:5px 10px;
+      outline:none;
+  } */
 
-    .startBtn:hover{
-        border-color:black;
-    }
+  .answerBtn:hover{
+      border-color:black;
+  }
 
-    .controls{
-        display:flex;
-        justify-content:center;
-        align-items:center;
-    }
+  .answerBtn.correct{
+      --hue:var(--hue-correct);
+  }
 
-    .hide{
-        display:none;
-    }
+  .answerBtn.wrong{
+    --hue:var(--hue-wrong);
+  }
