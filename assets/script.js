@@ -6,7 +6,9 @@ var timerEl = document.querySelector(".timer")
 var h1El = document.querySelector(".h1")
 var containerEl = document.querySelector("#container")
 var timerInterval
-var timeLeft = 60
+var timeLeft = 30
+var highscoreEl = document.querySelector(".highscore")
+var finalScoreEl = document.querySelector("#final-score")
 console.log(answerBtnEl)
 
 // startbtnEl.addEventListener('click', beginGame)
@@ -22,8 +24,12 @@ function beginGame() {
     countDown()
 }
 
+// highscoreEl.textContent = 'test'
+
 function endGame() {
     containerEl.classList.add('hide')
+    highscoreEl.classList.remove('hide')
+    // highscoreEl.textContent('test')
     clearInterval(timerInterval)
 }
 
@@ -45,29 +51,29 @@ function countDown() {
 }
 
 var questionsArray = [{
-    question: "what you eat?",
-    answers: ["meat", "veggies", "fruits", "dessert"],
-    solution: "meat"
+    question: "How would you target a class in CSS?",
+    answers: [".", "#", "$", "*"],
+    solution: "."
 }, {
-    question: "where do you work",
-    answers: ["golf course", "sotware engineer", "server", "water boy"],
-    solution: "golf course"
+    question: "what is ONE KEY component to and HTML?",
+    answers: ["var", "function", "Body", "::root"],
+    solution: "Body"
 }, {
-    question: "where do you sit",
-    answers: ["golf course", "sotware engineer", "server", "water boy"],
-    solution: "golf course"
+    question: "How do you make your commits visible on a remote repository?",
+    answers: ["git add -A", "git push", "git status", "git commit -m"],
+    solution: "git push"
 }, {
-    question: "where do you lay",
-    answers: ["golf course", "sotware engineer", "server", "water boy"],
-    solution: "golf course"
+    question: "What is the correct way to create a Javascript page on VS Code?",
+    answers: ["scipt.JAVA", "Java.script", "js.script", "script.js"],
+    solution: "script.js"
 }, {
-    question: "where do you stand",
-    answers: ["golf course", "sotware engineer", "server", "water boy"],
-    solution: "golf course"
+    question: "Where would you find a description of someones code?",
+    answers: ["VS Code", "README.md", "index.HTML", "script.js"],
+    solution: "README.md"
 }, {
-    question: "where do you work",
-    answers: ["golf course", "sotware engineer", "server", "water boy"],
-    solution: "golf course"
+    question: "Did i do a good job?",
+    answers: ["Absolutely", "no", "ehhhhh", "Negative-GhostRider"],
+    solution: "Absolutely"
 }];
 var qCounter = 0
 
@@ -92,14 +98,12 @@ function solution(event) {
         } else {
             event.target.classList.add("wrong");
             setTimeout(function (){
-                timeLeft=timeLeft-10
+                timeLeft=timeLeft-5
                 event.target.classList.remove("wrong")
             },1000)
     
         }
         if (qCounter<questionsArray.length-1){
-            console.log(qCounter)
-            console.log(questionsArray.length)
         setTimeout(function (){
             qCounter++
             displayQuestion();
@@ -110,6 +114,7 @@ function solution(event) {
         }
     }
 }
+
 
 answersEl.addEventListener('click', solution)
 startbtnEl.addEventListener('click', beginGame)

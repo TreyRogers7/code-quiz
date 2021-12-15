@@ -10,6 +10,10 @@
     --hue-Btn:775;
   }
 
+  .h1{
+      color:white;
+  }
+
   body{
     --hue:var(--hue-neutral);
     margin:0;
@@ -31,8 +35,8 @@
   } */
 
   #container{
-      width:600px;
-      max-width:80%;
+      width:500px;
+      max-width:100%;
       background-color:white;
       padding:10px;
       border-radius:5px;
@@ -62,13 +66,17 @@
 
   .questions{
       --hue:var(--hue-neutral);
-      background-color:hsl(var(--hue), 100%, 50%);
+      /* background-color:hsl(var(--hue), 100%, 50%); */
+      font-size: 20px;
   }
 
   .timer{
       display:flex;
       justify-content:center;
       align-items:center;
+      color:white;
+      font-size:40px;
+      font-weight: bold;
   }
 
   .startBtn{
@@ -102,4 +110,8 @@
 
   .answerBtn.wrong{
     background-color:red;
+  }
+
+  .highscore{
+
   }
